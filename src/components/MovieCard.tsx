@@ -30,7 +30,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
         <img
           src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
           alt={movie.title}
-          style={{ flexShrink: 0, width: 183, height: "auto" , padding:2 , borderRadius:12}}
+          style={{ flexShrink: 0, width: 183, height: "auto" , borderTopLeftRadius:12}}
         />
       )}
       <Flex align="start" vertical  style={{gap:7}}>
