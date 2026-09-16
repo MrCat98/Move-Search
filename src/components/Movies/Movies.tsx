@@ -9,7 +9,7 @@ export default async function Movies() {
   return (
     <Row gutter={[30,37]} style={{ marginTop: 21, padding: 20 }}>
       {movies.map((movie) => (
-        <Col xs={24} sm={24} md={12} key={movie.id} style={{ padding:20, }}>
+        <Col xs={24} sm={24} md={12} key={movie.id}>
           <MovieCard movie={movie} />
         </Col>
       ))}
