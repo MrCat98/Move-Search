@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Input, Row, Col } from 'antd'
-import MovieCard, { Movie } from '@/app/components/MovieCard'
+import { useState } from "react";
+import { Input, Row, Col } from "antd";
+import MovieCard, { Movie } from "@/components/MovieCard";
 
 export default function SearchMovie() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -20,7 +20,11 @@ export default function SearchMovie() {
 
   return (
     <>
-      <Input.Search placeholder="Поиск фильма" onSearch={handleSearch} style={{marginTop:19}}/>
+      <Input.Search
+        placeholder="Type to search..."
+        onSearch={handleSearch}
+        style={{ marginTop: 19 }}
+      />
 
       <Row gutter={[36, 37]} style={{ marginTop: 21 }}>
         {movies.map((movie) => (
@@ -30,5 +34,5 @@ export default function SearchMovie() {
         ))}
       </Row>
     </>
-  )
+  );
 }
