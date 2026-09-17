@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Input, Row, Col } from "antd";
-import MovieCard, { Movie } from "@/components/MovieCard";
+import MovieCard, { Movie } from "@/components/MovieCard/MovieCard";
 
 export default function SearchMovie() {
   const [movies, setMovies] = useState<Movie[]>([]);
