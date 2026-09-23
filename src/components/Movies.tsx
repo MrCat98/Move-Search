@@ -1,9 +1,10 @@
 import { getmovie } from "@/app/api/api";
-import { Row, Col,Pagination } from "antd";
+import { Row, Col } from "antd";
 import MovieCard, { Movie } from "@/components/MovieCard";
 
-export default async function Movies() {
-  const data = await getmovie();
+export default async function Movies({ page }: { page: number }) {
+
+  const data = await getmovie(page);
   const movies: Movie[] = data.results ?? [];
 
   return (
