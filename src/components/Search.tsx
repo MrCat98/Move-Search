@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Input, Row, Col } from "antd";
-import MovieCard, { Movie } from "@/components/MovieCard/MovieCard";
+import MovieCard, { Movie } from "@/components/MovieCard";
 
 export default function SearchMovie() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -26,13 +26,16 @@ export default function SearchMovie() {
         style={{ marginTop: 19 }}
       />
 
-      <Row gutter={[36, 37]} style={{ marginTop: 21 }}>
-        {movies.map((movie) => (
-          <Col span={12} key={movie.id}>
-            <MovieCard movie={movie} />
-          </Col>
-        ))}
-      </Row>
+     <div className="flex flex-col items-center ">
+         <Row gutter={[30, 37]} className="mt-[21px] max-w-252.5 min-w-145 p-5 mx-auto">
+           {movies.map((movie) => (
+             <Col xs={24} sm={12} md={12} key={movie.id} >
+               <MovieCard movie={movie} />
+             </Col>
+           ))}
+         </Row>
+           
+         </div>
     </>
   );
 }
