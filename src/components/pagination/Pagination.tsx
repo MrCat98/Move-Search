@@ -1,6 +1,7 @@
-'use client'
+"use client";
 
 import { Pagination as AntPagination } from "antd";
+import useOnlineStatus from "@/lib/hooks/useOnlineStatus";
 import { useRouter, useSearchParams } from "next/navigation";
 
 interface PaginationProps {
@@ -9,6 +10,7 @@ interface PaginationProps {
 
 export default function Pagination({ totalResults }: PaginationProps) {
   const router = useRouter();
+  const online = useOnlineStatus();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
 
@@ -22,7 +24,10 @@ export default function Pagination({ totalResults }: PaginationProps) {
       current={currentPage}
       total={totalResults}
       pageSize={20}
+      showSizeChanger={false}
+      disabled={!online}
       onChange={handleChange}
+      className="!p-4.25"
     />
   );
 }
