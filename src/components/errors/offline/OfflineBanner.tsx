@@ -1,7 +1,7 @@
 "use client";
 
 import { Alert } from "antd";
-import { OFFLINE_MESSAGE } from "@/app/errors/errors";
+import { OFFLINE_MESSAGE } from "@/components/errors/errors";
 import useOnlineStatus from "@/lib/hooks/useOnlineStatus";
 
 export default function OfflineBanner() {

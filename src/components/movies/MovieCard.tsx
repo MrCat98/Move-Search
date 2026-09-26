@@ -23,7 +23,7 @@ export default function MovieCard({
   priority?: boolean;
 }) {
   return (
-    <div className="flex gap-4 shadow-[0_10px_25px_rgba(0,0,0,0.15)] rounded-xl border border-white h-69.75 overflow-hidden max-w-112.75">
+    <div className="flex gap-4 shadow-[0_10px_25px_rgba(0,0,0,0.15)] border border-white h-69.75 overflow-hidden max-w-112.75">
       {movie.poster_path && (
         <Image
           src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
@@ -31,7 +31,7 @@ export default function MovieCard({
           width={200}
           height={300}
           priority={priority}
-          className="shrink-0 w-45.75 h-auto rounded-tl-xl"
+          className="shrink-0 w-45.75 h-auto"
         />
       )}
       <Flex align="start" vertical className="gap-1.75 ">
