@@ -2,7 +2,7 @@
 
 import { Pagination as AntPagination } from "antd";
 import useOnlineStatus from "@/lib/hooks/useOnlineStatus";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { PAGE_SIZE } from "@/lib/pagination";
 
 interface PaginationProps {
@@ -11,6 +11,7 @@ interface PaginationProps {
 
 export default function Pagination({ totalResults }: PaginationProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const online = useOnlineStatus();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
@@ -20,7 +21,7 @@ export default function Pagination({ totalResults }: PaginationProps) {
     const params = new URLSearchParams(searchParams);
     if (page > 1) params.set("page", String(page));
     else params.delete("page");
-    router.push(params.size ? `/?${params}` : "/");
+    router.push(params.size ? `${pathname}?${params}` : pathname);
   };
 
   return (

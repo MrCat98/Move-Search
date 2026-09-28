@@ -43,7 +43,7 @@ export default function SearchMovie() {
         onPressEnter={() => search(value)}
         suffix={<Spin size="small" spinning={pending} />}
         allowClear
-        className="mt-4.75 w-full"
+        className="mt-4.75 w-full min-w-97"
         size="large"
       />
     </div>
